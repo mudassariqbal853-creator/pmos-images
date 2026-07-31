@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head><meta charset="utf-8" /><style>
+  
+  @font-face {
+    font-family: "Dubai";
+    src: local("Dubai"), url("file:///C:/Windows/Fonts/DUBAI-REGULAR.TTF") format("truetype");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Dubai";
+    src: local("Dubai Medium"), url("file:///C:/Windows/Fonts/DUBAI-MEDIUM.TTF") format("truetype");
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: "Dubai";
+    src: local("Dubai Bold"), url("file:///C:/Windows/Fonts/DUBAI-BOLD.TTF") format("truetype");
+    font-weight: 700;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1080px; overflow: hidden; }
+  body { font-family: "Dubai", "Segoe UI", sans-serif; color: #1A2B2E; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #E8B84A; color: #062E32;
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 800; font-size: 18px;
+    padding: 8px 18px; border-radius: 999px;
+  }
+  .badge i { width: 8px; height: 8px; border-radius: 50%; background: #E85D04; display: inline-block; }
+  .logo-lg { width: 88px; height: 88px; }
+  .en { font-family: "Segoe UI", sans-serif; color: #E8B84A; font-weight: 800; }
+  .en-term { font-family: "Segoe UI", sans-serif; font-weight: 700; }
+  .hero {
+    width: 1080px; height: 1080px; position: relative; overflow: hidden;
+    background:
+      radial-gradient(ellipse 80% 50% at 15% 10%, rgba(232,184,74,0.25) 0%, transparent 55%),
+      linear-gradient(155deg, #062E32 0%, #0A555C 50%, #0E6A72 100%);
+    color: #fff;
+    padding: 48px 52px 40px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .hero-top { text-align: center; }
+  .hero .h1 {
+    font-size: 58px; font-weight: 700; line-height: 1.25;
+    margin-bottom: 10px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  }
+  .sub { font-size: 28px; font-weight: 500; line-height: 1.4; opacity: 0.92; }
+  .panel {
+    background: rgba(255,255,255,0.97);
+    border-radius: 28px;
+    padding: 22px 20px 18px;
+    color: #1A2B2E;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.28);
+  }
+  .panel-title {
+    text-align: center; font-size: 22px; font-weight: 700;
+    color: #0A555C; margin-bottom: 16px;
+  }
+  .compare { display: flex; direction: ltr; gap: 16px; align-items: stretch; }
+  .lane {
+    flex: 1; border-radius: 22px; padding: 22px 16px 20px;
+    text-align: center; min-height: 340px;
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+  }
+  .lane-narrow {
+    background: linear-gradient(165deg, #0A555C 0%, #0E6A72 100%);
+    color: #fff; box-shadow: 0 8px 20px rgba(10,85,92,0.28);
+  }
+  .lane-agi {
+    background: #F4F8F7; color: #1A2B2E; border: 2.5px dashed #8AA8AB;
+  }
+  .lane-tag {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 13px; font-weight: 800; letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 5px 12px; border-radius: 999px; margin-bottom: 12px;
+  }
+  .lane-narrow .lane-tag { background: #E8B84A; color: #062E32; }
+  .lane-agi .lane-tag { background: #E2EBEA; color: #3D6A6E; }
+  .lane h3 { font-size: 28px; font-weight: 700; line-height: 1.25; margin-bottom: 8px; }
+  .lane-agi h3 { color: #3D6A6E; }
+  .lane .desc { font-size: 20px; line-height: 1.35; opacity: 0.95; margin-bottom: 18px; }
+  .lane-agi .desc { color: #3D6A6E; opacity: 1; }
+  .icons {
+    display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+    margin-top: auto; padding-top: 8px;
+  }
+  .icon {
+    width: 64px; height: 64px; border-radius: 16px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 2px; font-size: 11px; font-weight: 700; font-family: "Segoe UI", sans-serif;
+  }
+  .lane-narrow .icon { background: rgba(255,255,255,0.16); color: #fff; }
+  .lane-agi .icon {
+    background: transparent; border: 2px dashed #8AA8AB; color: #3D6A6E;
+    width: 88px; height: 88px; border-radius: 20px; font-size: 13px;
+  }
+  .status {
+    margin-top: 14px; font-size: 18px; font-weight: 700;
+    padding: 6px 14px; border-radius: 999px;
+  }
+  .lane-narrow .status { background: rgba(232,184,74,0.95); color: #062E32; }
+  .lane-agi .status { background: #E2EBEA; color: #3D6A6E; }
+  .takeaway {
+    display: block; text-align: center;
+    background: #E8B84A; color: #062E32;
+    font-size: 26px; font-weight: 700;
+    padding: 12px 18px; border-radius: 999px;
+    margin: 16px auto 10px; max-width: 96%; line-height: 1.35;
+  }
+  .brand-line {
+    text-align: center; font-family: "Segoe UI", sans-serif;
+    font-size: 17px; font-weight: 600; color: #3D6A6E; direction: ltr;
+  }
+</style></head>
+<body>
+  <div class="hero" dir="ltr">
+    <div class="hero-top">
+      <div style="display:flex;justify-content:space-between;align-items:center;direction:ltr;margin-bottom:20px">
+        <div class="badge"><i></i>AI Literacy — Post 2</div>
+        <img class="logo-lg" src="file:///C:/Users/PMLS/source/repos/PMOS/Images/Brand/PMOS-logo-mark.png" alt="" />
+      </div>
+      <h1 class="h1">Is <span class="en">ChatGPT</span> <span class="en">General AI</span>?</h1>
+      <p class="sub">Short answer: No — know the difference</p>
+    </div>
+    <div class="panel">
+      <div class="panel-title">Narrow AI vs General AI (AGI)</div>
+      <div class="compare">
+        <div class="lane lane-narrow">
+          <div class="lane-tag">Exists today</div>
+          <h3><span class="en-term">Narrow AI</span></h3>
+          <p class="desc">Specific job · exists today</p>
+          
+  <div class="icons">
+    <div class="icon" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <rect x="7" y="2" width="10" height="20" rx="2"/>
+        <circle cx="12" cy="18" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+      phone
+    </div>
+    <div class="icon" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M4 6h12a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/>
+      </svg>
+      chat
+    </div>
+    <div class="icon" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11z"/>
+        <circle cx="12" cy="10" r="2.2"/>
+      </svg>
+      map
+    </div>
+  </div>
+          <div class="status">Working today</div>
+        </div>
+        <div class="lane lane-agi">
+          <div class="lane-tag">Not finished</div>
+          <h3><span class="en-term">General AI / AGI</span></h3>
+          <p class="desc">Broad ability · not finished today</p>
+          
+  <div class="icons">
+    <div class="icon" aria-hidden="true">
+      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 2.5">
+        <circle cx="12" cy="12" r="8"/>
+        <path d="M12 8v4l2.5 2.5"/>
+      </svg>
+      research
+    </div>
+  </div>
+          <div class="status">Not a finished product</div>
+        </div>
+      </div>
+      <div class="takeaway">Narrow = specific jobs · AGI not finished today</div>
+      <div class="brand-line">Pakistan Media OS · AI Literacy — Post 2</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head><meta charset="utf-8" /><style>
+  @font-face {
+    font-family: "Dubai";
+    src: local("Dubai"), url("file:///C:/Windows/Fonts/DUBAI-REGULAR.TTF") format("truetype");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Dubai";
+    src: local("Dubai Medium"), url("file:///C:/Windows/Fonts/DUBAI-MEDIUM.TTF") format("truetype");
+    font-weight: 500;
+  }
+  @font-face {
+    font-family: "Dubai";
+    src: local("Dubai Bold"), url("file:///C:/Windows/Fonts/DUBAI-BOLD.TTF") format("truetype");
+    font-weight: 700;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1080px; overflow: hidden; }
+  body {
+    font-family: "Dubai", "Segoe UI", sans-serif;
+    color: #1A2B2E;
+  }
+  .slide {
+    width: 1080px; height: 1080px;
+    position: relative; overflow: hidden;
+    padding: 56px 64px 48px;
+    display: flex; flex-direction: column;
+  }
+  .slide.dark {
+    background:
+      radial-gradient(ellipse 80% 50% at 15% 10%, rgba(232,184,74,0.22) 0%, transparent 55%),
+      linear-gradient(155deg, #062E32 0%, #0A555C 55%, #0E6A72 100%);
+    color: #FFFFFF;
+  }
+  .slide.light {
+    background:
+      radial-gradient(ellipse 70% 40% at 90% 0%, rgba(10,85,92,0.08) 0%, transparent 60%),
+      #F4F8F7;
+  }
+  .slide.light::before {
+    content: "";
+    position: absolute; left: 0; top: 0; bottom: 0; width: 14px;
+    background: #0A555C;
+  }
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 28px; direction: ltr;
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #E8B84A;
+    color: #062E32;
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 800; font-size: 18px;
+    padding: 8px 18px; border-radius: 999px;
+  }
+  .badge i { width: 8px; height: 8px; border-radius: 50%; background: #E85D04; display: inline-block; }
+  .logo { width: 64px; height: 64px; }
+  .logo-lg { width: 88px; height: 88px; }
+  .content { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+  .footer {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1.5px solid rgba(10,85,92,0.18);
+    font-family: "Segoe UI", sans-serif;
+    font-size: 18px; font-weight: 600;
+    color: #3D6A6E;
+    direction: ltr;
+  }
+  .slide.dark .footer {
+    border-top-color: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.75);
+  }
+  .h1 {
+    font-size: 58px; font-weight: 700; line-height: 1.25;
+    margin-bottom: 20px;
+  }
+  .slide.dark .h1 { font-size: 62px; text-shadow: 0 4px 20px rgba(0,0,0,0.25); }
+  .h1 .en { font-family: "Segoe UI", sans-serif; color: #E8B84A; font-weight: 800; }
+  .sub { font-size: 30px; font-weight: 500; line-height: 1.4; opacity: 0.92; }
+  .body { font-size: 32px; font-weight: 400; line-height: 1.45; }
+  .bullets { list-style: none; margin-top: 12px; }
+  .bullets li {
+    font-size: 30px; line-height: 1.35;
+    padding: 14px 0 14px 0;
+    border-bottom: 1px solid rgba(10,85,92,0.12);
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .slide[dir="rtl"] .bullets li { padding: 14px 0; }
+  .dot {
+    flex-shrink: 0; width: 14px; height: 14px; margin-top: 12px;
+    border-radius: 50%; background: #E8B84A;
+  }
+  .flow {
+    display: flex; direction: ltr; gap: 12px; align-items: stretch; margin-top: 20px;
+  }
+  .box {
+    flex: 1; border-radius: 22px; padding: 22px 14px; text-align: center; color: #fff;
+    min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .b1 { background: linear-gradient(160deg, #0A555C, #0E6A72); }
+  .b2 { background: linear-gradient(160deg, #0C7A58, #129B6E); }
+  .b3 { background: linear-gradient(160deg, #C45C12, #E07A2F); }
+  .num {
+    position: absolute; top: -12px; left: 14px;
+    width: 34px; height: 34px; border-radius: 50%;
+    background: #E8B84A; color: #062E32;
+    font-family: "Segoe UI", sans-serif; font-weight: 900; font-size: 16px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .box h3 { font-size: 26px; font-weight: 700; margin: 8px 0 6px; line-height: 1.25; }
+  .box p { font-size: 20px; opacity: 0.92; }
+  .arrow {
+    align-self: center; font-family: "Segoe UI", sans-serif;
+    font-weight: 900; font-size: 28px; color: #0A555C;
+  }
+  .truths { display: flex; flex-direction: column; gap: 16px; margin-top: 12px; }
+  .truth {
+    background: #FFFFFF;
+    border: 2px solid #D7E8E6;
+    border-radius: 18px;
+    padding: 20px 22px;
+    display: flex; gap: 18px; align-items: center;
+    font-size: 28px; font-weight: 600; line-height: 1.3;
+    box-shadow: 0 6px 16px rgba(10,85,92,0.06);
+  }
+  .truth .n {
+    width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0;
+    background: #0A555C; color: #fff;
+    font-family: "Segoe UI", sans-serif; font-weight: 900; font-size: 22px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .cta-pill {
+    display: inline-block; margin-top: 24px;
+    background: #E8B84A; color: #062E32;
+    font-size: 28px; font-weight: 700;
+    padding: 14px 28px; border-radius: 999px;
+  }
+  .en-term { font-family: "Segoe UI", sans-serif; font-weight: 700; }
+</style></head>
+<body>
+  <div class="slide light " dir="rtl">
+    <div class="topbar">
+      <div class="badge"><i></i>Urdu AI Literacy — Post 1</div>
+      <img class="logo" src="file:///E:/My_Products/PMOS/Images/Brand/PMOS-logo-mark.png" alt="" />
+    </div>
+    <div class="content">
+      <h1 class="h1">یاد رکھیں</h1>
+      <div class="truths">
+      <div class="truth"><span class="n">1</span><span>آج کی AI = <strong>Narrow AI</strong> (مخصوص کام)</span></div>
+      <div class="truth"><span class="n">2</span><span>ہر “AI” <strong>لیبل</strong> سچ نہیں</span></div>
+      <div class="truth"><span class="n">3</span><span>ChatGPT-class tools کبھی <strong>غلط بھی</strong> لکھ سکتی ہیں</span></div>
+    </div>
+    </div>
+    <div class="footer">Pakistan Media OS · Urdu AI Literacy — Post 1</div>
+  </div>
+</body>
+</html>

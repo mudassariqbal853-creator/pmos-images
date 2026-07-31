@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  @font-face {
+    font-family: "Dubai";
+    src: local("Dubai Bold"), url("file:///C:/Windows/Fonts/DUBAI-BOLD.TTF") format("truetype");
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "Dubai";
+    src: local("Dubai Medium"), url("file:///C:/Windows/Fonts/DUBAI-MEDIUM.TTF") format("truetype");
+    font-weight: 500;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1600px; height: 420px; overflow: hidden; background: transparent; }
+  body { background: #00FF00; } /* chroma — removed in post */
+  .row {
+    width: 1600px; height: 420px;
+    display: flex; align-items: center; gap: 48px;
+    padding: 50px 40px;
+    direction: ltr;
+  }
+  .mark { width: 320px; height: 320px; flex-shrink: 0; }
+  .text { display: flex; flex-direction: column; gap: 10px; }
+  .name {
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 700; font-size: 72px; color: #0A555C; line-height: 1.1;
+  }
+  .tag {
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 600; font-size: 34px; color: #3D6A6E;
+  }
+</style>
+</head>
+<body>
+  <div class="row">
+    <img class="mark" src="mark-transparent.svg" alt="" />
+    <div class="text">
+      <div class="name">Pakistan Media OS</div>
+      <div class="tag">Urdu &amp; English AI Literacy</div>
+    </div>
+  </div>
+</body>
+</html>

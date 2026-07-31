@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  @font-face {
+    font-family: "Dubai";
+    src: local("Dubai Bold"), url("file:///C:/Windows/Fonts/DUBAI-BOLD.TTF") format("truetype");
+    font-weight: 700;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; }
+  .canvas {
+    width: 1080px; height: 1920px; position: relative; overflow: hidden;
+    background:
+      radial-gradient(ellipse 80% 40% at 50% 18%, rgba(232,184,74,0.28) 0%, transparent 60%),
+      linear-gradient(165deg, #062E32 0%, #0A555C 50%, #0E6A72 100%);
+  }
+  .canvas::before {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 48px 48px; opacity: 0.4;
+  }
+  .safe {
+    position: relative; z-index: 2; height: 100%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 48px; text-align: center; padding: 80px 48px; direction: ltr;
+  }
+  .mark { width: 360px; height: 360px; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.35)); }
+  .name { font-family: "Segoe UI", sans-serif; font-weight: 700; font-size: 64px; color: #fff; }
+  .ur {
+    font-family: "Dubai", "Segoe UI", sans-serif; font-weight: 700; font-size: 42px;
+    color: #F4F8F7; direction: rtl; unicode-bidi: isolate; margin-top: 12px;
+  }
+  .tag {
+    margin-top: 28px; display: inline-block;
+    font-family: "Segoe UI", sans-serif; font-weight: 700; font-size: 24px;
+    color: #062E32; background: #E8B84A; padding: 12px 28px; border-radius: 999px;
+  }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="safe">
+      <img class="mark" src="mark-transparent.svg" alt="" />
+      <div>
+        <div class="name">Pakistan Media OS</div>
+        <div class="ur">پاکستان میڈیا او ایس</div>
+        <div class="tag">Urdu &amp; English AI Literacy</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

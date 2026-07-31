@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<style>
+  @font-face {
+    font-family: "Dubai";
+    src: local("Dubai Bold"), url("file:///C:/Windows/Fonts/DUBAI-BOLD.TTF") format("truetype");
+    font-weight: 700;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: VAR_Wpx; height: VAR_Hpx; overflow: hidden; }
+  .canvas {
+    width: VAR_Wpx; height: VAR_Hpx;
+    position: relative; overflow: hidden;
+    background:
+      radial-gradient(ellipse 70% 90% at 12% 50%, rgba(232,184,74,0.22) 0%, transparent 55%),
+      radial-gradient(ellipse 60% 80% at 90% 40%, rgba(215,232,230,0.18) 0%, transparent 50%),
+      linear-gradient(115deg, #062E32 0%, #0A555C 48%, #0E6A72 100%);
+  }
+  .canvas::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+    opacity: 0.55;
+    mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 80%, transparent 100%);
+  }
+  .path {
+    position: absolute;
+    left: 8%; right: 8%; top: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgba(215,232,230,0.55), transparent);
+    transform: translateY(-50%);
+  }
+  .safe {
+    position: relative; z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    padding: 0 6%;
+    direction: ltr;
+  }
+  .mark {
+    width: VAR_MARK; height: VAR_MARK;
+    flex-shrink: 0;
+    filter: drop-shadow(0 12px 28px rgba(0,0,0,0.28));
+  }
+  .copy { color: #fff; }
+  .name {
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 700;
+    font-size: VAR_NAME;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .ur {
+    font-family: "Dubai", "Segoe UI", sans-serif;
+    font-weight: 700;
+    font-size: VAR_UR;
+    margin-top: 8px;
+    direction: rtl;
+    unicode-bidi: isolate;
+    color: #F4F8F7;
+  }
+  .tag {
+    margin-top: 14px;
+    display: inline-block;
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 700;
+    font-size: VAR_TAG;
+    color: #062E32;
+    background: #E8B84A;
+    padding: 8px 18px;
+    border-radius: 999px;
+  }
+</style>
+</head>
+<body>
+  <div class="canvas">
+    <div class="path"></div>
+    <div class="safe">
+      <img class="mark" src="mark-transparent.svg" alt="" />
+      <div class="copy">
+        <div class="name">Pakistan Media OS</div>
+        <div class="ur">پاکستان میڈیا او ایس</div>
+        <div class="tag">Urdu &amp; English AI Literacy</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

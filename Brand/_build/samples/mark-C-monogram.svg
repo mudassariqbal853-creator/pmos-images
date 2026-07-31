@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" fill="none">
+  <!-- C: Monogram PM geometric -->
+  <rect x="48" y="48" width="928" height="928" rx="208" fill="#0A555C"/>
+  <!-- P stem -->
+  <rect x="250" y="280" width="64" height="460" rx="20" fill="#F4F8F7"/>
+  <!-- P bowl -->
+  <path d="M314 280 H480 C560 280 610 330 610 400 C610 470 560 520 480 520 H314 V280 Z" fill="#F4F8F7"/>
+  <path d="M378 344 H470 C510 344 546 370 546 400 C546 430 510 456 470 456 H378 V344 Z" fill="#0A555C"/>
+  <!-- M -->
+  <path d="M560 740 V300 L640 480 L720 300 V740" stroke="#F4F8F7" stroke-width="64" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="780" cy="240" r="44" fill="#E8B84A"/>
+</svg>

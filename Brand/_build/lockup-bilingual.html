@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="utf-8" />
+<style>
+  @font-face {
+    font-family: "Dubai";
+    src: local("Dubai Bold"), url("file:///C:/Windows/Fonts/DUBAI-BOLD.TTF") format("truetype");
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "Dubai";
+    src: local("Dubai Medium"), url("file:///C:/Windows/Fonts/DUBAI-MEDIUM.TTF") format("truetype");
+    font-weight: 500;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1600px; height: 520px; overflow: hidden; }
+  body { background: #00FF00; }
+  .row {
+    width: 1600px; height: 520px;
+    display: flex; align-items: center; gap: 48px;
+    padding: 60px 40px;
+    direction: ltr;
+  }
+  .mark { width: 320px; height: 320px; flex-shrink: 0; }
+  .text { display: flex; flex-direction: column; gap: 8px; }
+  .name {
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 700; font-size: 64px; color: #0A555C; line-height: 1.1;
+  }
+  .ur {
+    font-family: "Dubai", "Segoe UI", sans-serif;
+    font-weight: 700; font-size: 44px; color: #0A555C;
+    direction: rtl; text-align: left;
+    unicode-bidi: isolate;
+  }
+  .tag {
+    font-family: "Segoe UI", sans-serif;
+    font-weight: 600; font-size: 30px; color: #3D6A6E;
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+  <div class="row">
+    <img class="mark" src="mark-transparent.svg" alt="" />
+    <div class="text">
+      <div class="name">Pakistan Media OS</div>
+      <div class="ur">پاکستان میڈیا او ایس</div>
+      <div class="tag">Urdu &amp; English AI Literacy</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 420" fill="none">
+  <!-- Horizontal lockup: mark + wordmark  transparent bg -->
+  <g transform="translate(24, 50)">
+    <rect x="0" y="0" width="320" height="320" rx="72" fill="#0A555C"/>
+    <path d="M72 248 C 102 248, 118 188, 160 172 C 202 156, 218 110, 248 94"
+          stroke="#D7E8E6" stroke-width="14" stroke-linecap="round" fill="none"/>
+    <circle cx="72" cy="248" r="20" fill="#D7E8E6"/>
+    <circle cx="160" cy="172" r="22" fill="#F4F8F7"/>
+    <circle cx="248" cy="94" r="24" fill="#E8B84A"/>
+    <circle cx="72" cy="248" r="7" fill="#0A555C"/>
+    <circle cx="160" cy="172" r="8" fill="#0A555C"/>
+    <circle cx="248" cy="94" r="8" fill="#062E32"/>
+  </g>
+  <text x="400" y="195" font-family="Segoe UI, Arial, sans-serif" font-size="72" font-weight="700" fill="#0A555C">Pakistan Media OS</text>
+  <text x="400" y="270" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="600" fill="#3D6A6E">Urdu &amp; English AI Literacy</text>
+</svg>
