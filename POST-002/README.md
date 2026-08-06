@@ -33,3 +33,7 @@
 
 - Teaching visual: Narrow (exists) vs AGI (not finished) — dashed AGI panel, no fear imagery.
 - No unverified timelines; no brand-app logos.
+
+## Update — 2026-08-05
+
+TikTok/YouTube Shorts MP4 slideshows generated: `tiktok/POST-002-tiktok-ur-1080x1920.mp4`, `tiktok/POST-002-tiktok-en-1080x1920.mp4` (built via `Images/_build/build-tiktok-video.js POST-002 <ur|en>`, same shape as POST-001). Ready for TikTok upload retry and YouTube Shorts once the brand channel unlocks — copy at `Final/TikTok.md` and `Final/YouTubeShorts.md` (+ `en/`).

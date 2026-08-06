@@ -34,3 +34,7 @@
 | Instagram | slides 01–08 | `Final/Instagram.md` · `Final/en/Instagram.md` |
 | LinkedIn | hero (or ask for 1200×627) | `Final/LinkedIn.md` · `Final/en/LinkedIn.md` |
 | X / Threads / WhatsApp | hero | matching `Final/` + `Final/en/` |
+
+## Update — 2026-08-05
+
+TikTok/YouTube Shorts MP4 slideshows generated: `tiktok/POST-009-tiktok-ur-1080x1920.mp4`, `tiktok/POST-009-tiktok-en-1080x1920.mp4` (built via `Images/_build/build-tiktok-video.js POST-009 <ur|en>`, same shape as POST-001). Ready for TikTok upload retry and YouTube Shorts once the brand channel unlocks — copy at `Final/TikTok.md` and `Final/YouTubeShorts.md` (+ `en/`).
